@@ -50,7 +50,6 @@ export default function App() {
     if (item.isCorrect) {
       setScore((prevScore) => prevScore + 1);
     }
-    // setIsHeld(true);
   }
   const questionEle = data.map((item) => {
     return (
@@ -58,20 +57,15 @@ export default function App() {
         key={item.id}
         question={item.question}
         answers={item.answers}
-        // handelClick={handelClick}
-        // scoreCount={scoreCount}
         scoreAnswers={scoreAnswers}
         isChecked={isChecked}
       />
     );
   });
-  // function handelChange(event) {
-  //   setSelectedAnswers(event.target.id);
-  // }
+
   function handelSubmit(e) {
     e.stopPropagation();
     e.preventDefault();
-    // setIsChecked(true);
     setIsChecked((prevItem) => !prevItem);
   }
   function toggler() {
